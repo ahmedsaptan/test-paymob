@@ -6,10 +6,27 @@ const app =  express();
 app.use(express.json());
 
 app.post("/v1/api", (req, res) => {
-    console.log(res.body);
-    res.send({
-        success: true
+
+
+    const rand = Math.random()
+
+    console.table({
+        rand
     })
+    if(rand > 0.5) {
+        res.send({
+            success: true,
+            body: res.body,
+            query: req.query
+        })
+    } else {
+        res.status(401).send({
+            success: false,
+            body: res.body,
+            query: req.query
+        })
+    }
+
 })
 app.get("/", (req, res) => {
     res.send({
