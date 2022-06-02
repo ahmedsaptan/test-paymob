@@ -11,7 +11,7 @@ app.post("/v1/api", (req, res) => {
         success: true
     })
 })
-app.get("/v1/api", (req, res) => {
+app.get("/", (req, res) => {
     res.send({
         success: true,
         message: "API "
