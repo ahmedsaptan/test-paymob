@@ -28,6 +28,12 @@ app.post("/v1/api", (req, res) => {
     }
 
 })
+app.get("/v1/api", (req, res) => {
+    console.log({
+        query: req.query
+    })
+    res.send()
+})
 app.get("/", (req, res) => {
     res.send({
         success: true,
