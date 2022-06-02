@@ -6,15 +6,13 @@ const app =  express();
 app.use(express.json());
 
 app.post("/v1/api", (req, res) => {
-
-
-    const rand = Math.random()
-
     console.log({
         body: req.body
     })
 })
 app.get("/v1/api", (req, res) => {
+    const rand = Math.random()
+
     if(rand > 0.5) {
         res.send({
             success: true,
